@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Recuperación de contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-title class="ion-padding-top ion-text-center">
+    <ion-label>
+      <h1>LLene los campos</h1>
+
+    </ion-label>
+  </ion-title>
+
+  <div class="ion-padding-vertical">
+
+    <ion-card class="ion-text-center ion-padding-vertical">
+
+      <ion-card-title class="ion-text-center">
+        <ion-label>
+          <h2>Si su usuario y clave son correctos</h2>
+          <h2>su clave se actualizara</h2>
+        </ion-label>
+      </ion-card-title>
+
+
+      <ion-card-content>
+        <ion-item >
+          <ion-label position="floating" #titulo3 >Ingresa su nombre de usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="sesion.User_name"></ion-input>
+        </ion-item>
+
+        <ion-item >
+          <ion-label position="floating" #ti5 >Ingresa su apellido</ion-label>
+          <ion-label position="floating" #ti4 ></ion-label>
+
+          <ion-input type="text" [(ngModel)]="sesion.segundo_apellido_materno"></ion-input>
+        </ion-item>
+        <ion-item >
+          <ion-label position="floating" #ti6 >Ingresa su nueva contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="sesion.Password"></ion-input>
+        </ion-item>
+        <ion-item >
+          <ion-label position="floating" #ti7 >Repite tu nueva contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="sesion.Password2"></ion-input>
+        </ion-item>
+
+        <ion-row>
+          <ion-col size="12">
+
+            <ion-button shape="block" (click)="Restableser()">Actualizar contraseña</ion-button>
+          </ion-col>
+          <ion-col size="12">
+            <ion-button shape="block" (click)="limpiarFormulario()" id="limpiar2">
+              Limpiar
+            </ion-button>
+
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+
+      <div class="ion-padding-top ion-text-center">
+        <ion-button [routerLink]="['/login']" id="volver">Volver</ion-button>
+      </div>
+    </ion-card>
+  </div>
+  <div class="ion-padding-top ion-text-center">
+    <img src='assets/icon/3.jpg' style='width: 25% ; border: 2px solid black'>
+    </div>
+
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-left ion-text">
+      Identificación de usuario
+    </ion-title>
+
+  </ion-toolbar>
+</ion-footer>

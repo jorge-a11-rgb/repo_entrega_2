@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <div #titulo>
+      <ion-title>Registro de asistencia</ion-title>
+    </div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding-top ion-text-center">
+      <p *ngIf="usuario">Holaa!! {{ nombreUsuario }}</p>
+</div>
+  <ion-label class="ion-padding-top ion-text-center">
+    <h1>
+      Instrucciones para registrar asistencia
+    </h1>
+  </ion-label>
+  <ion-label class="ion-padding-top ion-text-center">
+    <p>
+      Escanee el código QR haciendo clic en el siguiente botón
+    </p>
+  </ion-label>
+  <ion-row class="ion-padding-top ion-text-center">
+    <ion-col size="12">
+
+
+<ion-button [routerLink]="['/camara']">Escanear código QR</ion-button>
+<ion-button [routerLink]="['/userlist']">Lista de usuarios</ion-button>
+
+    </ion-col>
+  </ion-row>
+
+
+      <div class="ion-padding-top ion-text-center">
+      <img src='assets/icon/2.jpg' style='width: 25% ; border: 2px solid rgb(255, 255, 255)'>
+      </div>
+
+      <div class="ion-padding-top ion-text-center">
+        <ion-button (click)="cerrarSesion()">Cerrar sesión</ion-button>
+      </div>
+
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+
+    <div #titulo2>
+      <ion-title class="ion-text-left ion-text">
+        Identificación de asistencia
+      </ion-title>
+    </div>
+
+
+
+
+
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,34 @@
+<!-- Se mueve todo de la actividad anterior a MisDatos -->
+<!-- Comienza el Header -->
+<ion-header [translucent]="false">
+  <ion-toolbar class="ion-padding-top ion-text-center">
+    <ion-title>
+      Información
+    </ion-title>
+  </ion-toolbar>
+
+
+  <div class="ion-padding-top ion-text-center">
+    <ion-button [routerLink]="['/login']" id="volver">Volver</ion-button>
+  </div>
+
+  <ion-toolbar>
+    <ion-segment value="datos-paciente" (ionChange)="segmentChanged($event)">
+
+
+      <ion-segment-button value="pregunta-clave">
+        <p>Politicas de DUOC UC</p>
+      </ion-segment-button>
+      <ion-segment-button value="salud">
+        <p>Salud mental</p>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<!-- Termina el Header -->
+
+<ion-content>
+  <!-- AquÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­ se desplegara todos los Component que se declararon como children en
+  HomePageModule -->
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>

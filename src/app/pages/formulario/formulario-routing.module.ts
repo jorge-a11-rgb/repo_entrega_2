@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ComponentsModule } from 'src/app/components/components.module';
 
 import { PreguntaClaveComponent } from 'src/app/components/pregunta-clave/pregunta-clave.component';
+import { SaludComponent } from 'src/app/components/salud/salud.component';
 import { FormularioPage } from './formulario.page';
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
       {
         path:'pregunta-clave',
         component: PreguntaClaveComponent
+      },
+      {
+        path:'salud',
+        component: SaludComponent
       }
     ]
   },

@@ -66,16 +66,17 @@ export class AppModule {
             console.log('El objeto devuelto por executeSql es el siguiente.');
             console.log(data);
 
-            // console.log('Recorrer todas las filas y mostrar los items devueltos.');
-            // for (let i = 0; i < data.rows.length; i++) {
-            //   console.log(data.rows.item(i));
-            // }
+            console.log('Recorrer todas las filas y mostrar los items devueltos.');
+            for (let i = 0; i < data.rows.length; i++) {
+            console.log(data.rows.item(i));
+            }
 
-            // console.log('Recorrer todas las filas y mostrar los nombres de usuarios.');
-            // for (let i = 0; i < data.rows.length; i++) {
-            //   console.log(data.rows.item(i).user_name);
-            //   console.log(data.rows.item(i).password);
-            // }
+            console.log('Recorrer todas las filas y mostrar los nombres de usuarios.');
+            for (let i = 0; i < data.rows.length; i++) {
+            console.log(data.rows.item(i).user_name);
+            console.log(data.rows.item(i).password);
+            console.log(data.rows.item(i).segundo_apellido_materno);
+            }
           })
           .catch(e => {
             console.log('Error al seleccionar registros con SELECT en la BD.');

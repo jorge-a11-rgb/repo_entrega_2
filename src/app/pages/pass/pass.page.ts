@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable @typescript-eslint/semi */
 /* eslint-disable @typescript-eslint/naming-convention */
 
@@ -37,6 +38,8 @@ export class PassPage implements OnInit, AfterViewInit {
   @ViewChild('ti5', { read: ElementRef, static: true }) ti5: ElementRef;
   @ViewChild('ti6', { read: ElementRef, static: true }) ti6: ElementRef;
   @ViewChild('ti7', { read: ElementRef, static: true }) ti7: ElementRef;
+
+
 
   public sesion: Sesion = new Sesion();
   public validarUsuario(sesion: Sesion): boolean {
@@ -86,21 +89,27 @@ export class PassPage implements OnInit, AfterViewInit {
   public ngOnInit(): void {}
 
   public Restableser(): void {
+
     const sesion = new Sesion();
     sesion.Password = this.sesion.Password;
     sesion.Password2 = this.sesion.Password2;
     sesion.User_name = this.sesion.User_name;
     sesion.segundo_apellido_materno = this.sesion.segundo_apellido_materno;
     sesion.active = this.sesion.active;
+    if (!this.validarUsuario(this.sesion)) {
+
+      return;
+    } else {
     this.DBTaskService.actualizarClave(sesion);
-    this.presentToast('Contraseña actualizada');
+    this.presentToast('Proceso concluido');
     const navigationExtras: NavigationExtras = {
       state: {
         sesion: this.sesion.User_name,
       },
-    };
+    }
     this.router.navigate(['/login'], navigationExtras);
   }
+}
   public limpiarFormulario(): void {
     for (const [key, value] of Object.entries(this.sesion)) {
       Object.defineProperty(this.sesion, key, { value: '' });

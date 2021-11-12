@@ -1,18 +1,18 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Datos alumno</ion-title>
+    <ion-title>Registro de alumno</ion-title>
   </ion-toolbar>
 </ion-header>
 <!-- Comienza el Content -->
 <ion-content [fullscreen]="true" class="ion-padding-horizontal">
   <ion-title class="ion-padding-top ion-text-center">
     <ion-label>
-      <h1>Bienvenido</h1>
+      <h1>Bienvenido a DUOC UC</h1>
 
     </ion-label>
   </ion-title>
   <b class="ion-text-center">
-    <h4>Llene el formulario</h4>
+    <h4>Crea tus credenciales</h4>
     <div class="ion-padding-top ion-text-center" #i>
       <img src='assets/icon/Pers.jpeg' style='width: 35% ; border: 2px solid black'>
       </div>
@@ -25,7 +25,8 @@
   </ion-item>
 
   <ion-item class="ion-padding-horizontal">
-    <ion-label position="floating">Apellido Materno </ion-label>
+    <ion-label position="floating">Cual es tu pelicula </ion-label>
+    <ion-label position="floating">favorita?</ion-label>
     <ion-input type="text" [(ngModel)]="sesion.segundo_apellido_materno"></ion-input>
   </ion-item>
 

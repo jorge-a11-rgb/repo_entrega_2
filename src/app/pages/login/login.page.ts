@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
-import { ToastController, AlertController } from '@ionic/angular';
+import { ToastController, AlertController, AnimationController } from '@ionic/angular';
 
 import { DBTaskService } from 'src/app/services/dbtask.service';
 import { NavigationExtras, Router } from '@angular/router';
@@ -9,12 +9,15 @@ import { Storage } from '@ionic/storage';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Usuario_pass } from 'src/app/model/Usuario_pass';
 import { ActivatedRoute } from '@angular/router';
+import { AfterViewInit, ElementRef, ViewChild } from '@angular/core';
    @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage implements OnInit, AfterViewInit {
+  @ViewChild('u1', { read: ElementRef, static: true }) u1: ElementRef;
+  @ViewChild('u2', { read: ElementRef, static: true }) u2: ElementRef;
 
   public us: Usuario_pass = new Usuario_pass();
 
@@ -27,7 +30,8 @@ export class LoginPage implements OnInit {
     private activeroute: ActivatedRoute,
     private router: Router,
     private storage: Storage,
-    public authenticationService: AuthenticationService
+    public authenticationService: AuthenticationService,
+    public animationController: AnimationController
   ) {
     this.us = new Usuario_pass();
     this.us.nombreUsuario = '';
@@ -37,6 +41,20 @@ export class LoginPage implements OnInit {
     usuario: this.us.nombreUsuario
   }
 };}
+public ngAfterViewInit(): void {
+  // eslint-disable-next-line prefer-const
+  let animation = this.animationController
+    .create()
+    .addElement(this.u1.nativeElement)
+    .addElement(this.u2.nativeElement)
+    .duration(4000)
+
+    .fromTo('opacity', 0.1, 5);
+
+  document.querySelector('#limpiar1').addEventListener('click', () => {
+    animation.play();
+  });
+}
   ngOnInit() {}
   /**
    * Función que permite el inicio de sesión y acceder

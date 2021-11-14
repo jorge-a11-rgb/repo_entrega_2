@@ -75,6 +75,16 @@ ngOnInit() {
 cerrarSesion() {
   this.authenticationService.logout();
 }
-
+ionViewWillEnter() {
+  this.authenticationService.getUserDataFromStorage().then(
+    (response) => {
+      console.log('ionViewWillEnter');
+      console.log(response);
+      this.userName = response.user_name;
+    }
+  );
+  this.setPublicacion(null, null, '', '', '');
+  this.getPublicaciones();
+}
 
 }

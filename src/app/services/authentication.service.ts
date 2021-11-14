@@ -5,9 +5,10 @@ import { DebugEventListener, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { ToastController } from '@ionic/angular';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { DBTaskService } from './dbtask.service';
 import { debug } from 'console';
+import { resolve } from 'dns';
 
 @Injectable({
   providedIn: 'root'
@@ -116,6 +117,36 @@ export class AuthenticationService {
       console.log(error);
     });
   }
+
+
+  getUserDataFromStorage() {
+    console.log('Estoy dentro de getUserDataFromStorage');
+    try {
+      return this.storage.get("USER_DATA").
+        then(
+          response => {
+            console.log('Ya he recuperado el usuario desde el storage');
+            console.log(response);
+            if(response !== null){
+              console.log('USER_DATA viene CON DATOS.');
+              console.log(response);
+            } else {
+              console.log('USER_DATA viene vacio.');
+            }
+            return Promise.resolve(response);
+          },
+          (resp) => {
+            console.log('No logro obtener USER_DATA.');
+          }
+      )
+    }
+    catch(error) {
+      console.log('Error en getUserDataFromStorage(), cayo en el catch.');
+      console.log(error);
+      return null;
+    }
+  }
+
   async presentToast(message: string, duration?: number){
     const toast = await this.toastController.create(
       {

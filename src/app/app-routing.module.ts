@@ -51,12 +51,16 @@ const routes: Routes = [
   },
 
 
+
+  {
+    path: 'comentarios',
+    loadChildren: () => import('./pages/comentarios/comentarios.module').then( m => m.ComentariosPageModule)
+  },
+
   {
     path: '**',
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
-
-
 
 
 ];

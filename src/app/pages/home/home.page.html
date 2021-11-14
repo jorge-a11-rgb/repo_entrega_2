@@ -9,7 +9,10 @@
 
 <ion-content>
   <div class="ion-padding-top ion-text-center">
-      <p *ngIf="usuario">Holaa!! {{ nombreUsuario }}</p>
+    <span>
+      Hola!!! &nbsp;
+    </span>
+    <ion-input [(ngModel)]="userName"></ion-input>
 </div>
   <ion-label class="ion-padding-top ion-text-center">
     <h1>
@@ -26,7 +29,8 @@
 
 
 <ion-button [routerLink]="['/camara']">Escanear código QR</ion-button>
-<ion-button [routerLink]="['/userlist']">Lista de usuarios</ion-button>
+
+<ion-button [routerLink]="['/comentarios']">Escibenos tu comentario</ion-button>
 
     </ion-col>
   </ion-row>

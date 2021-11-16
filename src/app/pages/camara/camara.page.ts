@@ -5,6 +5,7 @@ import jsQR from 'jsqr';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import { Animation, AnimationController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-camara',
   templateUrl: './camara.page.html',
@@ -45,23 +46,6 @@ export class CamaraPage implements OnInit {
     this.videoElement = this.video.nativeElement;
 
   }
-
-  // Helper functions
-  // async showQrToast() {
-  //   const toast = await this.toastCtrl.create({
-  //     message: `Open ${this.scanResult}?`,
-  //     position: 'top',
-  //     buttons: [
-  //       {
-  //         text: 'Open',
-  //         handler: () => {
-  //           window.open(this.scanResult, '_system', 'location=yes');
-  //         }
-  //       }
-  //     ]
-  //   });
-  //   toast.present();
-  // }
 
   reset() {
     this.scanResult = null;

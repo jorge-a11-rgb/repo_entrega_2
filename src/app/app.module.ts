@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { IonicModule, IonicRouteStrategy, Platform } from '@ionic/angular';
+import { IonBackButton, IonicModule, IonicRouteStrategy, IonTabButton, Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
@@ -16,12 +16,83 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { AuthenticationService } from './services/authentication.service';
 import { Storage } from '@ionic/storage';
 import { SaludComponent } from './components/salud/salud.component';
+import { isPlatform } from '@ionic/core';
+
+const getConfig = () =>{
+  if(isPlatform('hybrid')){
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+
+    };
+  }
+  if(isPlatform('ios')){
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+
+    };
+  }
+  if(isPlatform('android')){
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+
+    };
+  }
+  if(isPlatform('desktop')){
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+
+    };
+  }
+  if(isPlatform('cordova')){
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+
+    };
+  }
+  if(isPlatform('ipad')){
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+
+    };
+  }
+
+  if(isPlatform('tablet')){
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+
+    };
+  }
+  if(isPlatform('capacitor')){
+    return {
+      backButtonText: 'Previous',
+      tabButtonLayout: 'label-hide'
+
+    };
+  }
+  return {
+    menuIcon: 'ellipsis-vertical'
+  };
+};
+
+
+
 
 @NgModule({
   declarations: [AppComponent,  PreguntaClaveComponent, SaludComponent],
   entryComponents: [],
   imports: [HttpClientModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    BrowserAnimationsModule, FormsModule],
+    BrowserAnimationsModule, FormsModule, IonicModule.forRoot({
+      rippleEffect: false,
+      mode: 'md'
+    })
+],
   providers: [
     SQLite,
     DBTaskService,

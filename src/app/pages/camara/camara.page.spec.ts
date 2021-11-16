@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
-import { CamaraPage } from './camara.page';
+import { CamaraPage } from './camara.page';npm run e2e
 
 describe('CamaraPage', () => {
   let component: CamaraPage;

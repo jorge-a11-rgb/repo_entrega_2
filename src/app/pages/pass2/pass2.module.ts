@@ -8,6 +8,7 @@ import { Pass2PageRoutingModule } from './pass2-routing.module';
 
 import { Pass2Page } from './pass2.page';
 import { MatSliderModule } from '@angular/material/slider';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MatSliderModule } from '@angular/material/slider';
     FormsModule,
     IonicModule,
     Pass2PageRoutingModule,
-    MatSliderModule
+    MatSliderModule,
+    FormsModule, RouterModule
   ],
   declarations: [Pass2Page]
 })

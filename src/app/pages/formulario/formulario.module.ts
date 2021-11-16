@@ -7,6 +7,7 @@ import { PreguntaClaveComponent } from 'src/app/components/pregunta-clave/pregun
 import { ComponentsModule } from 'src/app/components/components.module';
 import { FormularioPage } from './formulario.page';
 import { SaludComponent } from 'src/app/components/salud/salud.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,7 +18,8 @@ import { SaludComponent } from 'src/app/components/salud/salud.component';
     FormsModule,
     IonicModule,
     // See: HomePageRoutingModule
-    FormularioPageRoutingModule
+    FormularioPageRoutingModule,
+    FormsModule, RouterModule
   ],
   declarations: [FormularioPage],
   entryComponents:[

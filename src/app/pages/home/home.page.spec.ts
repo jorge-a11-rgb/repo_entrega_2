@@ -10,6 +10,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { MatSliderModule } from '@angular/material/slider';
+import { RouterModule } from '@angular/router';
 
 
 describe('HomePage', () => {
@@ -19,7 +20,7 @@ describe('HomePage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HomePage ],
-      imports: [IonicModule.forRoot(), CommonModule, FormsModule, ]
+      imports: [IonicModule.forRoot(), CommonModule, FormsModule, RouterModule ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);

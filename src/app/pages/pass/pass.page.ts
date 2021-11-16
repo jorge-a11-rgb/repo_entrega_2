@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router, NavigationExtras, RouterModule } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -59,7 +59,8 @@ export class PassPage implements OnInit, AfterViewInit {
     private alertController: AlertController,
     private animationController: AnimationController,
     private DBTaskService: DBTaskService,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public routerModule: RouterModule
   ) {
     this.sesion = new Sesion();
     this.sesion.Password = '';

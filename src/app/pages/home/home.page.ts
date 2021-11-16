@@ -24,7 +24,8 @@ export class HomePage implements OnInit, AfterViewInit {
   @ViewChild('titulo2', { read: ElementRef, static: true}) titulo2: ElementRef;
 
   nombreUsuario = '';
-
+  userName = '';
+  usuarios: any;
    constructor(
         private animationController: AnimationController
         ,private router: Router

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ComentariosPageRoutingModule } from './comentarios-routing.module';
 
 import { ComentariosPage } from './comentarios.page';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ComentariosPageRoutingModule
+    ComentariosPageRoutingModule,
+    FormsModule, RouterModule
   ],
   declarations: [ComentariosPage]
 })

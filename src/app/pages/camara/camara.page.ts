@@ -47,21 +47,21 @@ export class CamaraPage implements OnInit {
   }
 
   // Helper functions
-  async showQrToast() {
-    const toast = await this.toastCtrl.create({
-      message: `Open ${this.scanResult}?`,
-      position: 'top',
-      buttons: [
-        {
-          text: 'Open',
-          handler: () => {
-            window.open(this.scanResult, '_system', 'location=yes');
-          }
-        }
-      ]
-    });
-    toast.present();
-  }
+  // async showQrToast() {
+  //   const toast = await this.toastCtrl.create({
+  //     message: `Open ${this.scanResult}?`,
+  //     position: 'top',
+  //     buttons: [
+  //       {
+  //         text: 'Open',
+  //         handler: () => {
+  //           window.open(this.scanResult, '_system', 'location=yes');
+  //         }
+  //       }
+  //     ]
+  //   });
+  //   toast.present();
+  // }
 
   reset() {
     this.scanResult = null;
@@ -128,7 +128,6 @@ export class CamaraPage implements OnInit {
       if (code) {
         this.scanActive = false;
         this.scanResult = code.data;
-        this.showQrToast();
       } else {
         if (this.scanActive) {
           requestAnimationFrame(this.scan.bind(this));
@@ -162,7 +161,6 @@ export class CamaraPage implements OnInit {
 
       if (code) {
         this.scanResult = code.data;
-        this.showQrToast();
       }
     };
     img.src = URL.createObjectURL(file);

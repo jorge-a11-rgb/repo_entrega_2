@@ -8,6 +8,7 @@ import { CamaraPageRoutingModule } from './camara-routing.module';
 
 import { CamaraPage } from './camara.page';
 import { MatSliderModule } from '@angular/material/slider';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MatSliderModule } from '@angular/material/slider';
     FormsModule,
     IonicModule,
     CamaraPageRoutingModule,
-    MatSliderModule
+    MatSliderModule,
+    FormsModule, RouterModule
   ],
   declarations: [CamaraPage]
 })

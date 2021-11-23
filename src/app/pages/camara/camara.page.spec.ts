@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
-import { CamaraPage } from './camara.page';npm run e2e
+import { CamaraPage } from './camara.page';
 
 describe('CamaraPage', () => {
   let component: CamaraPage;
@@ -12,7 +13,7 @@ describe('CamaraPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CamaraPage ],
-      imports: [IonicModule.forRoot(), FormsModule, RouterModule]
+      imports: [IonicModule.forRoot(), CommonModule, FormsModule, RouterModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CamaraPage);

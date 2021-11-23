@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -12,7 +13,7 @@ describe('RegistroPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RegistroPage ],
-      imports: [IonicModule.forRoot(), FormsModule, RouterModule]
+      imports: [IonicModule.forRoot(), CommonModule,  FormsModule, RouterModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(RegistroPage);
@@ -20,7 +21,9 @@ describe('RegistroPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+
+it('should create', () => {
     expect(component).toBeTruthy();
   });
+// eslint-disable-next-line eol-last
 });

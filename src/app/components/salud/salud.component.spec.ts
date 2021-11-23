@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -12,7 +13,7 @@ describe('SaludComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SaludComponent ],
-      imports: [IonicModule.forRoot(), FormsModule, RouterModule]
+      imports: [IonicModule.forRoot(), FormsModule, RouterModule, CommonModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(SaludComponent);

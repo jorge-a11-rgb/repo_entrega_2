@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -12,7 +13,7 @@ describe('Pass2Page', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ Pass2Page ],
-      imports: [IonicModule.forRoot(), FormsModule, RouterModule]
+      imports: [IonicModule.forRoot(), CommonModule, FormsModule, RouterModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(Pass2Page);

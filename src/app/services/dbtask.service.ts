@@ -78,7 +78,7 @@ export class DBTaskService {
     /*** Función que valida la existencia del usuario que esta iniciando sesión
      * @param sesion Datos de inicio de sesión Usuario y Password
      */
-    getSesionData(sesion:any){
+    getSesionData(sesion: any){
       let sql = `SELECT user_name, active FROM sesion_data
       WHERE user_name=? AND password=? LIMIT 1`;
       return this.db.executeSql(sql,[sesion.nombreUsuario,

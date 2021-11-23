@@ -126,7 +126,7 @@ export class CamaraPage implements OnInit {
     this.fileinput.nativeElement.click();
   }
 
-  handleFile(files: FileList) {
+handleFile(files: FileList) {
     const file = files.item(0);
 
     // eslint-disable-next-line no-var

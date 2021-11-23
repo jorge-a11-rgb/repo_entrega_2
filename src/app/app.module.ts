@@ -18,6 +18,8 @@ import { Storage } from '@ionic/storage';
 import { SaludComponent } from './components/salud/salud.component';
 import { isPlatform } from '@ionic/core';
 
+
+
 const getConfig = () =>{
   if(isPlatform('hybrid')){
     return {

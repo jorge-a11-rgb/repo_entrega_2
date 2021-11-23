@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -12,7 +13,7 @@ describe('LoginPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginPage ],
-      imports: [IonicModule.forRoot(), FormsModule, RouterModule]
+      imports: [IonicModule.forRoot(), CommonModule, FormsModule, RouterModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginPage);
